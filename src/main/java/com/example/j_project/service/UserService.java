@@ -1,0 +1,23 @@
+package com.example.j_project.service;
+
+import com.example.j_project.models.User;
+import com.example.j_project.models.Weather;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface UserService {
+
+    User createUser(User newUser);
+
+    User createAdmin(User newAdmin);
+
+    List<User> findAllUsers();
+
+    List<Weather> getWeathers(String city, int days);
+    List<Weather> getByKeyword(String keyword);
+
+/*
+    Optional<Weather> findAllByCity(String city);
+*/
+}

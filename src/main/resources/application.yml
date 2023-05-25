@@ -1,0 +1,44 @@
+
+
+
+server:
+  port: 8988
+
+spring:
+  security:
+    oauth2:
+      resource:
+        userInfoUri=: https://www.googleapis.com/oauth2/v3/userinfo
+        preferTokenInfo: true
+      client:
+        accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+        userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+        clientAuthenticationScheme: form
+        scope:
+          - openid
+          - email
+          - profile
+        registration:
+          google:
+            client-id: 968740976971-8pr6u7t6hduhrnssk7r6run4al39v3ib.apps.googleusercontent.com
+            client-secret: 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
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring
+    username: postgres
+    password: 1234
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+logging:
+  level:
+    com.example.j_project: debug
+
+
+
+
+
